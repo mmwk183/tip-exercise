@@ -24,7 +24,6 @@ function Form() {
         setTotal(bill*(percentage/100+1)/people)
     }
     
-
     return (
         <div>
             <form onSubmit={mathsTotal}>
@@ -36,7 +35,7 @@ function Form() {
                 <input onChange={totalPercentage} id="tipPercent" type="text" name="tipPercent" />
                 <input type="submit" value="Submit" />
             </form>
-            <p>{total}</p>
+            <p>Each person pays a total of £{total}</p>
         </div>
 
     )
