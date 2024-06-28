@@ -21,20 +21,20 @@ function Form() {
 
     function mathsTotal(e) {
         e.preventDefault()
-        setTotal(bill*percentage/people)
+        setTotal(bill*(percentage/100+1)/people)
     }
     
 
     return (
         <div>
-            <form>
-            <label htmlFor="totalBill">Total bill</label>
-            <input onChange={totalBill} id="totalBill" type="text" name="totalBill" />
-            <label htmlFor="numberPeople">Number of people</label>
-            <input onChange={totalPeople} id="numberPeople" type="text" name="numberPeople" />
-            <label htmlFor="tipPercent">Tip percentage</label>
-            <input onChange={totalPercentage} id="tipPercent" type="text" name="tipPercent" />
-            <input onClick={mathsTotal} type="submit" value="Submit" />
+            <form onSubmit={mathsTotal}>
+                <label htmlFor="totalBill">Total bill</label>
+                <input onChange={totalBill} id="totalBill" type="text" name="totalBill" />
+                <label htmlFor="numberPeople">Number of people</label>
+                <input onChange={totalPeople} id="numberPeople" type="text" name="numberPeople" />
+                <label htmlFor="tipPercent">Tip percentage</label>
+                <input onChange={totalPercentage} id="tipPercent" type="text" name="tipPercent" />
+                <input type="submit" value="Submit" />
             </form>
             <p>{total}</p>
         </div>
